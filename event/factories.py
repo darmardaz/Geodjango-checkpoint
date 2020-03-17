@@ -1,6 +1,7 @@
 import factory
-from factory import fuzzy
 from django.contrib.gis.geos import Polygon
+from factory import fuzzy
+
 from .models import Event, Voivodeship
 
 

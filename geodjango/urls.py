@@ -3,8 +3,6 @@ from django.urls import path
 
 from event import views
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/check-voiv/', views.CheckVoivodeshipApi.as_view(), name="voivodeship_check"),

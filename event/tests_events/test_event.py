@@ -1,7 +1,7 @@
 import pytest
 from django.urls import reverse
-from event.models import Event, Voivodeship
 
+from event.models import Event, Voivodeship
 
 pytestmark = pytest.mark.django_db
 

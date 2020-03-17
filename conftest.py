@@ -1,5 +1,6 @@
 import pytest
 from pytest_factoryboy import register
+
 from event.factories import VoivodeshipFactory, EventFactory
 
 register(VoivodeshipFactory)
