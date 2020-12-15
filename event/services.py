@@ -9,13 +9,13 @@ def get_voivodeship_from_coordinates(lat: int, lng: int):
 
 
 def create_event(data):
-    voivodeship = get_voivodeship_from_coordinates(data.get('lat'), data.get('lng'))
+    voivodeship = get_voivodeship_from_coordinates(data.get("lat"), data.get("lng"))
     if voivodeship is None:
         return
     event = Event.objects.create(
         voivodeship=voivodeship,
-        name=data.get('name'),
-        description=data.get('description')
+        name=data.get("name"),
+        description=data.get("description"),
     )
     return event
 

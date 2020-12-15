@@ -1,4 +1,4 @@
-FROM python:3.8-alpine3.11
+FROM python:3.8-alpine3.12
 ENV PYTHONUNBUFFERED 1
 
 RUN echo "http://dl-3.alpinelinux.org/alpine/edge/main/" >>/etc/apk/repositories

@@ -14,7 +14,9 @@ class CheckVoivodeshipApi(APIView):
     def post(self, request):
         serializer = self.InputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        lng, lat = serializer.validated_data.get('lng'), serializer.validated_data.get('lat')
+        lng, lat = serializer.validated_data.get("lng"), serializer.validated_data.get(
+            "lat"
+        )
         voivodeship = services.get_voivodeship_from_coordinates(lat=lat, lng=lng)
         if voivodeship is None:
             return Response("Point outside of Poland", status.HTTP_400_BAD_REQUEST)
@@ -34,7 +36,10 @@ class CreateEventApi(APIView):
         event = services.create_event(serializer.validated_data)
         if event is None:
             return Response("Event outside of Poland", status.HTTP_400_BAD_REQUEST)
-        return Response({"name": event.name, "voivodeship": event.voivodeship.name}, status.HTTP_201_CREATED)
+        return Response(
+            {"name": event.name, "voivodeship": event.voivodeship.name},
+            status.HTTP_201_CREATED,
+        )
 
 
 class EventDetailApi(APIView):
